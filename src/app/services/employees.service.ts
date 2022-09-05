@@ -20,4 +20,8 @@ export class EmployeesService {
     addEmployeeRequest.id ="00000000-0000-0000-0000-000000000000"
     return this.http.post<Employee>(this.baseAPIUrl + 'api/employees',addEmployeeRequest)
   }
+
+  getEmployee(id : string) : Observable<Employee>{
+    return this.http.get<Employee>(this.baseAPIUrl + 'api/employees/' + id)
+  }
 }
